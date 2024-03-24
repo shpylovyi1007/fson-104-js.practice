@@ -181,13 +181,47 @@
 //TODO: 9 ===================================
 // Порахуйте суму чисел від 12 до 27
 
-const min = 12;
-const max = 27;
-let sum = 0;
+//const min = 12;
+//const max = 27;
+//let sum = 0;
 
-for (let i = min; i <= max; i += 1) {
-  console.log(`${sum} + ${i} = ${sum + i}`);
-  sum += i;
+//for (let i = min; i <= max; i += 1) {
+//  console.log(`${sum} + ${i} = ${sum + i}`);
+//  sum += i;
+//}
+
+//console.log('🚀 -> sum:', sum);
+
+//TODO: 10 ===================================
+//Якщо число ділитися на 3 повертати
+//fizz якщо ділитися на 5 повертати buzz
+//Якщо ділитися на 3 і на 5 повернути fizzbuzz
+
+
+function checkNumber(num) {
+  for (let i = 1; i <= num; i++) {
+//   if (i%3 ===0 && i%5 ===0 ) {
+//    console.log("fizzbuzz");
+ //  } else if(i%5===0) {
+ //    console.log("buzz");
+//   } else if(i%3 ===0) {
+  //   console.log("fizz");
+ //  } else {
+ //    console.log(i);
+ //  }
+    //   
+    
+    let str = ""
+    if (i % 3 === 0) {
+      str +="fizz"
+    }
+     
+    if (i % 5 === 0) {
+      str +="buzz"
+    }
+
+    console.log(str || i)
+  }
 }
 
-console.log('🚀 -> sum:', sum);
+checkNumber (30)
