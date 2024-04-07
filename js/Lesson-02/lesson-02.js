@@ -69,4 +69,38 @@
 
 
 // console.log(calculateAverage(5, 5, "true"));
-// console.log(calculateAverage(5, 65, 44, 23, 2));
+// console.log(calculateAverage(5, 65, 44, 23, 2));// * Літерал об'єкта
+
+
+//TODO:============task-1=========================
+// Створіть об'єкт "людина" з властивостями "ім'я", "хобі" і "вік". Напишіть метод "greet", який буде виводити на екран привітання з ім'ям людини.
+// Послідовно:
+// 1 додати поле mood зі значенням 'happy'
+// 2 замінити hobby на 'skydiving'
+
+const human = { 
+    userName: "Bob", 
+    hobby: "Football",
+    age: 30,
+    greet() {
+        console.log(`hello ${this.userName}`);
+    }
+}
+// console.log(human.userName);
+// console.log(human.greet());
+// console.log(human["hobby"]);
+// human.mood = "happy";
+// human.hobby = "skydiving";
+// console.log(human);
+
+const newHuman = Object.create(human);
+newHuman.userName = "Mango";
+
+// console.log(newHuman.greet());
+
+// window.console.log(1);
+for (const key in newHuman) {
+    if (newHuman.hasOwnProperty(key)) {
+       console.log(key); 
+    }
+    }

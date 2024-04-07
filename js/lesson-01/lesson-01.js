@@ -198,8 +198,8 @@
 //Якщо ділитися на 3 і на 5 повернути fizzbuzz
 
 
-function checkNumber(num) {
-  for (let i = 1; i <= num; i++) {
+// function checkNumber(num) {
+//   for (let i = 1; i <= num; i++) {
 //   if (i%3 ===0 && i%5 ===0 ) {
 //    console.log("fizzbuzz");
  //  } else if(i%5===0) {
@@ -211,17 +211,6 @@ function checkNumber(num) {
  //  }
     //   
     
-    let str = ""
-    if (i % 3 === 0) {
-      str +="fizz"
-    }
-     
-    if (i % 5 === 0) {
-      str +="buzz"
-    }
 
-    console.log(str || i)
-  }
-}
 
-checkNumber (30)
+
