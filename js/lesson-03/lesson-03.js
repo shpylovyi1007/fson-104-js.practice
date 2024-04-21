@@ -118,13 +118,9 @@
 // }, 0);
 // console.log('🚀 -> avgNumber:', avgNumber);
 
-
-
-
 //! Callback
 //TODO:============task-01=========================
 // Напишіть функцію, яка приймає два числа і колбек-функцію. Функція повинна помножити числа між собою та передати результат дії до колбек-функції. Колбек-функція повинна, у разі, якщо, це число є парним - помножити це число на себе, якщо ні - взяти квадратний корінь з цього числа, та вивести результат у консоль лог.
-
 
 // function performOperation(a, b, Callback) {
 //   return Callback(a * b);
@@ -135,8 +131,6 @@
 // }
 
 // console.log(performOperation(10, 5, Callback));
-
-
 
 //TODO:============task-02=========================
 // Напишіть функцію, яка приймає масив і колбек-функцію. Функція повинна повернути перший елемент масиву,
@@ -155,14 +149,14 @@
 //     if(callback(element) && result === null) {
 //       result = element;
 //     }
-    
+
 //   });
 //   return result;
 // }
 
 // function isEven(number) {
 //   return number % 2 === 0;
-  
+
 // }
 
 // function startWithO(str) {
@@ -173,59 +167,57 @@
 
 // console.log(findElement(words, startWithO));
 
-
 //TODO:=========task-01=================
 // Створити об'єкт, який представляє користувача. У об'єкті повинні бути наступні поля: ім'я, прізвище, вік, email та метод, який виводить
 // повну інформацію про користувача.
 
 const user = {
-    userName: "Oven",
-    lastName: "Ken",
-    age: 18,
-    email: "oven@gmail.com",
+  userName: 'Oven',
+  lastName: 'Ken',
+  age: 18,
+  email: 'oven@gmail.com',
 
-        showUser() {
-            console.log(this);
-        }
+  showUser() {
+    console.log(this);
+  },
+};
+// user.showUser();
+// const user1 = Object.create(user);
+// console.log(user1);
+// user1.userName = "Mango";
+// user1.showUser();
 
-    }
-    // user.showUser();
-    // const user1 = Object.create(user);
-    // console.log(user1);
-    // user1.userName = "Mango";
-    // user1.showUser();
+//TODO:=========task-02=================
+// Створити глобальну функцію для обьекта "user", що може додавати властивості об'єкту, в контексті якого вона буде викликана. Додати цю функцію як метод об'єкта user, та додати за допомогою неї властивість friends із значенням:
 
-    //TODO:=========task-02=================
-    // Створити глобальну функцію для обьекта "user", що може додавати властивості об'єкту, в контексті якого вона буде викликана. Додати цю функцію як метод об'єкта user, та додати за допомогою неї властивість friends із значенням:
+// function addProperty(key, value) {
+//     this[key] = value;
+// }
 
-    // function addProperty(key, value) {
-    //     this[key] = value;
-    // }
+// user.addProperty = addProperty;
+// console.log(user);
+// user.addProperty("friends", ["John", "Bob"])
 
-    // user.addProperty = addProperty;
-    // console.log(user);
-    // user.addProperty("friends", ["John", "Bob"])
+//TODO:=========task-03=================
+//  Викликати метод user.showUser() таким чином, щоб він вивів результатом  ({name: 'Bob', lastName: 'Lasso',age: 50, email: 'BodLasso@gmail.com'})
 
-    //TODO:=========task-03=================
-    //  Викликати метод user.showUser() таким чином, щоб він вивів результатом  ({name: 'Bob', lastName: 'Lasso',age: 50, email: 'BodLasso@gmail.com'})
-
-    const obj = {
-        userName: 'Bob',
-        lastName: 'Lasso',
-        age: 50,
-        email: 'BodLasso@gmail.com',
-    };
+const obj = {
+  userName: 'Bob',
+  lastName: 'Lasso',
+  age: 50,
+  email: 'BodLasso@gmail.com',
+};
 
 // user.showUser.call(obj);
-    
+
 //TODO:=========task-04=================
 //  Викличте функцію showFullName у контексті об'єкта user
 
 function showFullName(message, num) {
-    console.log(`${message}, ${this.userName} ${this.lastName}, ${num}`);
+  console.log(`${message}, ${this.userName} ${this.lastName}, ${num}`);
 }
-showFullName.apply(obj, ["Hello", 10]);
-showFullName.call(user, "bue-bue", 15);
+showFullName.apply(obj, ['Hello', 10]);
+showFullName.call(user, 'bue-bue', 15);
 
 //TODO:=========task-05=================
 // Виправте помилки, щоб код працював
@@ -244,3 +236,55 @@ function callAction(callback) {
 
 callAction(product.showPrice.bind(product));
 
+//! class
+//TODO:=================task-01=============================
+// Завдання полягає у створенні програми, що дозволяє керувати замовленнями в ресторані.
+
+// #### Для цього потрібно реалізувати клас `Order`, який містить такі приватні властивості:
+// - `tableNumber` - номер столика, де зроблено замовлення
+// - `items` - масив предметів замовлення, де кожен предмет містить ім'я (name) та ціну (price)
+// - `isPaid` - позначає, чи оплачене замовлення (default = false)
+
+// ##### Для класу Order потрібно реалізувати такі методи:
+// - `calculateTotal`() - повертає загальну суму замовлення.
+// - `markAsPaid`() - позначає замовлення як оплачене
+// - `addItem`() - який додає предмет замовлення до масиву "items"
+// - `removeItem`() - який видаляє предмет замовленя з масиву "items"
+// ##### Додатково можна створити гетери та сетери для отримання номера столика, статусу замовлення та самого замовлення
+
+// #### Також потрібно створити клас `MenuItem`, який містить властивості `name` та `price` для предметів замовлення.
+
+class Order {
+  #tableNumber;
+  #items;
+  #isPaid;
+
+  constructor(tableNumber) {
+    this.#tableNumber = tableNumber;
+    this.#items = [];
+    this.#isPaid = false;
+  }
+
+  calculateTotal() {
+    return this.#items.reduce((acc, order) => acc + order.price, 0);
+  }
+
+  markAsPaid() {
+    return (this.#isPaid = true);
+  }
+
+  addItem(item) {
+    this.#items.push(item);
+  }
+
+  removeItem(item) {
+    const index = this.#items.indexOf(item);
+    if (index !== -1) {
+      this.#items.splice(index, 1);
+    }
+  }
+}
+
+class MenuItem {
+  constructor(name, price) 
+}
