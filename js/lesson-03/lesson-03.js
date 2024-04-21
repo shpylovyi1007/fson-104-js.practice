@@ -171,6 +171,76 @@
 
 // console.log(findElement(numbers, isEven));
 
-// console.log(findElement(words, startWithO)); 
+// console.log(findElement(words, startWithO));
 
+
+//TODO:=========task-01=================
+// Створити об'єкт, який представляє користувача. У об'єкті повинні бути наступні поля: ім'я, прізвище, вік, email та метод, який виводить
+// повну інформацію про користувача.
+
+const user = {
+    userName: "Oven",
+    lastName: "Ken",
+    age: 18,
+    email: "oven@gmail.com",
+
+        showUser() {
+            console.log(this);
+        }
+
+    }
+    // user.showUser();
+    // const user1 = Object.create(user);
+    // console.log(user1);
+    // user1.userName = "Mango";
+    // user1.showUser();
+
+    //TODO:=========task-02=================
+    // Створити глобальну функцію для обьекта "user", що може додавати властивості об'єкту, в контексті якого вона буде викликана. Додати цю функцію як метод об'єкта user, та додати за допомогою неї властивість friends із значенням:
+
+    // function addProperty(key, value) {
+    //     this[key] = value;
+    // }
+
+    // user.addProperty = addProperty;
+    // console.log(user);
+    // user.addProperty("friends", ["John", "Bob"])
+
+    //TODO:=========task-03=================
+    //  Викликати метод user.showUser() таким чином, щоб він вивів результатом  ({name: 'Bob', lastName: 'Lasso',age: 50, email: 'BodLasso@gmail.com'})
+
+    const obj = {
+        userName: 'Bob',
+        lastName: 'Lasso',
+        age: 50,
+        email: 'BodLasso@gmail.com',
+    };
+
+// user.showUser.call(obj);
+    
+//TODO:=========task-04=================
+//  Викличте функцію showFullName у контексті об'єкта user
+
+function showFullName(message, num) {
+    console.log(`${message}, ${this.userName} ${this.lastName}, ${num}`);
+}
+showFullName.apply(obj, ["Hello", 10]);
+showFullName.call(user, "bue-bue", 15);
+
+//TODO:=========task-05=================
+// Виправте помилки, щоб код працював
+
+const product = {
+  price: 5000,
+
+  showPrice() {
+    console.log(this.price);
+  },
+};
+
+function callAction(callback) {
+  callback();
+}
+
+callAction(product.showPrice.bind(product));
 
