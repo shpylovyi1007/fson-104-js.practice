@@ -60,11 +60,41 @@ const input = document.querySelector('.js-username-input');
 //   }
 // });
 
-input.addEventListener('focus', onFocus);
-function onFocus(event) {
-  if (event.target.value.trim()) {
-    event.target.style.outline = '3px solid green';
-  } else {
-    event.target.style.outline = '3px solid red';
-  }
-}
+// input.addEventListener('focus', onFocus);
+// function onFocus(event) {
+//   if (event.target.value.trim()) {
+//     event.target.style.outline = '3px solid green';
+//   } else {
+//     event.target.style.outline = '3px solid red';
+//   }
+// }
+
+// const form = document.querySelector('.js-contact-form');
+// form.addEventListener('submit', event => {
+//   event.preventDefault();
+//   // const input = event.currentTarget.elements.userName.value.trim();
+//   // const checkbox = event.currentTarget.elements.accept;
+//   const { userName, accept } = event.currentTarget.elements;
+//   if (!userName.value.trim() || !accept.checked) {
+//     return alert('input is empty');
+//   }
+
+//   const userData = { userName: userName.value }
+//   console.log(userData);
+//   event.currentTarget.reset();
+// });
+
+//TODO:=========task-01=======Accordion==========
+/**
+ * Викоритовуй шаблон акордеон меню з файлу html та напиши наступний функціонал:
+ * при кліку на елемент меню, розкривай блок з текстом.При повторному кліку по елементу,
+ * розкритий текст приховується.Нажимаючи на інші елементи меню, попередньо відкриті елементи не закриваються.
+ */
+
+const list = document.querySelector('.js-accordion-list');
+
+list.addEventListener('click', event => {
+  if (event.target.nodeName !== 'BUTTON') return;
+  const curentButton = event.target;
+  curentButton.nextElementSibling.classList.toggle('active');
+});
