@@ -25,7 +25,7 @@ for (let i = 0; i < boxes; i++) {
   divContainer.appendChild(div);
 }
 
-section.append(divContainer)
+section.append(divContainer);
 
 // section.prepend(divContainer)
 // section.after(divContainer)
@@ -36,14 +36,35 @@ section.append(divContainer)
 
 // console.log(divContainer);
 
-
 //TODO:=========task-03=================
-/**
- *!  Form Events, Input, Focus, Blur and Submit.
 
-*? Викоритовуй шаблон форми з файлу html.
+//  *!  Form Events, Input, Focus, Blur and Submit.
 
-** 1 - При події `input`, якщо користувач ввів в поле більше 6 символів то додати клас `success`. Якщо ж символів менше аніж 6, то клас `error`
+// *? Викоритовуй шаблон форми з файлу html.
 
-** 2 - При події `focus` зроби перевірку на пустоту поля інпута, якщо ж поле пусте, то зроби `outline` => `'3px solid red'`, якщо при фокусі поле непусте, то `outline` => `'3px solid green'`
+// ** 1 - При події `input`, якщо користувач ввів в поле більше 6 символів то додати клас `success`. Якщо ж символів менше аніж 6, то клас `error`
 
+// ** 2 - При події `focus` зроби перевірку на пустоту поля інпута, якщо ж поле пусте, то зроби `outline` => `'3px solid red'`, якщо при фокусі поле непусте, то `outline` => `'3px solid green
+
+const input = document.querySelector('.js-username-input');
+
+// input.addEventListener('input', event => {
+//   // console.log(event.target.value);
+
+//   if (event.target.value.length > 6) {
+//     event.target.classList.add('success');
+//     event.target.classList.remove('error');
+//   } else {
+//     event.target.classList.remove('success');
+//     event.target.classList.add('error');
+//   }
+// });
+
+input.addEventListener('focus', onFocus);
+function onFocus(event) {
+  if (event.target.value.trim()) {
+    event.target.style.outline = '3px solid green';
+  } else {
+    event.target.style.outline = '3px solid red';
+  }
+}
