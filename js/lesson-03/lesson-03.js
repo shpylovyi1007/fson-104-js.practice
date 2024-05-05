@@ -265,6 +265,14 @@ class Order {
     this.#isPaid = false;
   }
 
+  get isPaid() {
+    return this.#isPaid;
+  }
+
+  get order() {
+    return this.#items;
+  }
+
   calculateTotal() {
     return this.#items.reduce((acc, order) => acc + order.price, 0);
   }
@@ -286,5 +294,26 @@ class Order {
 }
 
 class MenuItem {
-  constructor(name, price) 
+  constructor(name, price) {
+    this.name = name;
+    this.price = price;
+  }
 }
+
+const order1 = new Order(1);
+
+const item1 = new MenuItem('Pizza', 10);
+
+const item2 = new MenuItem('Burger', 15);
+
+order1.addItem(item1);
+
+order1.addItem(item2);
+
+console.log(order1.calculateTotal());
+
+console.log(order1.isPaid);
+
+order1.markAsPaid();
+
+console.log(order1.isPaid);
