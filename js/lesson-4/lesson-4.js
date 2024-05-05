@@ -35,3 +35,15 @@ section.append(divContainer)
 // section.insertAdjacentHTML('beforeend', divContainer)
 
 // console.log(divContainer);
+
+
+//TODO:=========task-03=================
+/**
+ *!  Form Events, Input, Focus, Blur and Submit.
+
+*? Викоритовуй шаблон форми з файлу html.
+
+** 1 - При події `input`, якщо користувач ввів в поле більше 6 символів то додати клас `success`. Якщо ж символів менше аніж 6, то клас `error`
+
+** 2 - При події `focus` зроби перевірку на пустоту поля інпута, якщо ж поле пусте, то зроби `outline` => `'3px solid red'`, якщо при фокусі поле непусте, то `outline` => `'3px solid green'`
+
